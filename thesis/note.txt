@@ -6,3 +6,6 @@ key word：
 SOA架构
 ZooKeeper
 jetty
+
+轻量级分布式RPC框架：http://my.oschina.net/huangyong/blog/361751
+rpc ppt: http://wenku.baidu.com/link?url=_-Ou3j6Rk1O_MwIStTrujUGMiAtKwrH5RthDH6oxsRcqR2w6kKck0meEBvoWnQcdGS5AcVe8j2X1-A63xJkL42CvFfwHszXqmKwE_Dw5NsW###
