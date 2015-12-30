@@ -5,15 +5,20 @@
 	<groupId>com.steel</groupId>
 	<artifactId>bee</artifactId>
 	<version>1.0.0</version>
-	<packaging>war</packaging>
+	<packaging>pom</packaging>
 	<name>bee</name>
 
+	<properties>
+		<bee.version>${project.version}</bee.version>
+		<spring.version>2.5.6</spring.version>
+	</properties>
+
+	<modules>
+		<module>bee-attempt</module>
+		<module>bee-remote</module>
+	</modules>
+
 	<dependencies>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jcl-over-slf4j</artifactId>
-			<version>1.6.0</version>
-		</dependency>
 		<dependency>
 			<groupId>org.apache.zookeeper</groupId>
 			<artifactId>zookeeper</artifactId>
