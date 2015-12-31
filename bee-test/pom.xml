@@ -9,8 +9,16 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.steel</groupId>
-	<artifactId>bee-remote</artifactId>
-	<version>${bee.version}</version>
+	<artifactId>bee-test</artifactId>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.steel</groupId>
+			<artifactId>bee-attempt</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
 
 </project>

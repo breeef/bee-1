@@ -9,13 +9,16 @@
 	<name>bee</name>
 
 	<properties>
-		<bee.version>${project.version}</bee.version>
+		<bee.version>1.0.0</bee.version>
 		<spring.version>2.5.6</spring.version>
 	</properties>
 
 	<modules>
 		<module>bee-attempt</module>
 		<module>bee-remote</module>
+		<module>bee-config</module>
+		<module>bee-common</module>
+		<module>bee-test</module>
 	</modules>
 
 	<dependencies>
