@@ -10,11 +10,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.steel</groupId>
 	<artifactId>bee-common</artifactId>
-	<version>${bee.version}</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
-
-	<dependencies>
-
-	</dependencies>
 
 </project>
