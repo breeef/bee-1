@@ -1,4 +1,4 @@
-package com.steel.bee.remote.bee.api;
+package com.steel.bee.api;
 
 /**
  * Created by gang.qin on 2015/12/30.

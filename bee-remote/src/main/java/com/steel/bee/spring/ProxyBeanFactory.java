@@ -1,9 +1,11 @@
-package com.steel.bee.remote.bee.spring;
+package com.steel.bee.spring;
 
 import com.steel.bee.common.util.ClassUtils;
 import com.steel.bee.config.ConfigManager;
 import com.steel.bee.config.loader.ConfigManagerLoader;
-import com.steel.bee.remote.bee.remote.common.util.Constants;
+import com.steel.bee.remote.ServiceFactory;
+import com.steel.bee.remote.common.util.Constants;
+import com.steel.bee.remote.invoker.config.spring.InvokerConfig;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.FactoryBean;
 
@@ -31,7 +33,7 @@ public class ProxyBeanFactory implements FactoryBean {
 
     @Override
     public Class<?> getObjectType() {
-        return null;
+        return objType;
     }
 
     @Override
@@ -44,7 +46,8 @@ public class ProxyBeanFactory implements FactoryBean {
             return;
         }
         objType = ClassUtils.loadClass(iface.trim());
-        
+        InvokerConfig invokerConfig = new InvokerConfig(); // TODO
+        obj = ServiceFactory.getService(invokerConfig);
     }
 
 
