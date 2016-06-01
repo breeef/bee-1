@@ -16,9 +16,11 @@ public class ProxyBeanFactory implements FactoryBean {
 
     private ConfigManager configManager = ConfigManagerLoader.getConfigManager();
 
+    //FactoryBean 需要的字段
     private Object obj;
     private Class<?> objType;
 
+    //spring schema配置字段
     private String serviceName;
     private String iface;
     private String serialize = Constants.SERIALIZE_HESSIAN;
@@ -41,6 +43,7 @@ public class ProxyBeanFactory implements FactoryBean {
         return true;
     }
 
+    // 解析客户端服务的spring配置入口函数
     public void init() throws Exception {
         if (StringUtils.isBlank(iface)) {
             return;
