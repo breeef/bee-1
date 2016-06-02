@@ -1,4 +1,4 @@
-package com.steel.bee.remote.common.util;
+package com.steel.beeremote.common.util;
 
 /**
  * Created by gang.qin on 2015/12/30.
@@ -17,6 +17,9 @@ public final class Constants {
     public static final String CLUSTER_FAILOVER = "failover";
     public static final String CLUSTER_FAILSAFE = "failsafe";
     public static final String CLUSTER_FORKING = "forking";
+
+    public static final String PROTOCOL_HTTP = "http";
+    public static final String PROTOCOL_DEFAULT = "default";
 
     public static final int DEFAULT_TIMEOUT = 5000;
 

@@ -1,4 +1,4 @@
-package com.steel.bee.remote.provider.config;
+package com.steel.beeremote.provider.config;
 
 /**
  * Created by gang.qin on 2015/12/30.

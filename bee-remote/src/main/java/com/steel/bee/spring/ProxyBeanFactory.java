@@ -1,11 +1,12 @@
 package com.steel.bee.spring;
 
+import com.google.gson.Gson;
 import com.steel.bee.common.util.ClassUtils;
 import com.steel.bee.config.ConfigManager;
 import com.steel.bee.config.loader.ConfigManagerLoader;
-import com.steel.bee.remote.ServiceFactory;
-import com.steel.bee.remote.common.util.Constants;
-import com.steel.bee.remote.invoker.config.spring.InvokerConfig;
+import com.steel.beeremote.ServiceFactory;
+import com.steel.beeremote.common.util.Constants;
+import com.steel.beeremote.invoker.config.InvokerConfig;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.FactoryBean;
 
@@ -27,6 +28,7 @@ public class ProxyBeanFactory implements FactoryBean {
     private String callMethod = Constants.CALL_SYNC;
     private int timeout = Constants.DEFAULT_TIMEOUT;
     private String cluster = Constants.CLUSTER_FAILFAST;
+    private String protocol = Constants.PROTOCOL_DEFAULT;
 
     @Override
     public Object getObject() throws Exception {
@@ -49,17 +51,16 @@ public class ProxyBeanFactory implements FactoryBean {
             return;
         }
         objType = ClassUtils.loadClass(iface.trim());
-        InvokerConfig invokerConfig = new InvokerConfig(); // TODO
+        InvokerConfig invokerConfig = new InvokerConfig(objType, serviceName, serialize, callMethod, timeout, cluster, protocol);
         obj = ServiceFactory.getService(invokerConfig);
+
+        // TODO load balanceManager.register
     }
 
-
-    public ConfigManager getConfigManager() {
-        return configManager;
-    }
-
-    public void setConfigManager(ConfigManager configManager) {
-        this.configManager = configManager;
+    @Override
+    public String toString() {
+        Gson gson = new Gson();
+        return gson.toJson(this, ProxyBeanFactory.class);
     }
 
     public String getServiceName() {
